@@ -14,7 +14,7 @@ function Line(props) {
       });
   }, [props.line]);
 
-  if (!lineInfo) {
+  if (!lineInfo || !props.line) {
     return null;
   } else {
     return (

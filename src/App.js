@@ -10,6 +10,7 @@ function App() {
 
 	function handleSelectedMode(selectedMode) {
 		setMode(selectedMode);
+		setLine(null);
 	}
 
 	function handleSelectedLine(selectedLine) {
@@ -17,7 +18,7 @@ function App() {
 	}
 
 	return (
-		<div className="m-4">
+		<main className="m-4">
 			<header className="text-3xl mb-8">
 				<h1>Transport For London Line Information</h1>
 			</header>
@@ -27,7 +28,7 @@ function App() {
 				<LineSelect mode={mode} handleSelectedLine={handleSelectedLine} />
 				<Line line={line} />
 			</div>
-		</div>
+		</main>
 	);
 }
 
