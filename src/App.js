@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import ModeSelect from "./ModeSelect";
 import LineSelect from "./LineSelect";
+import Line from "./Line";
 
 function App() {
 	const [mode, setMode] = useState(null);
@@ -24,7 +25,7 @@ function App() {
 			<div className="w-full px-3 mb-4">
 				<ModeSelect handleSelectedMode={handleSelectedMode} />
 				<LineSelect mode={mode} handleSelectedLine={handleSelectedLine} />
-				You selected line: {line}
+				<Line line={line} />
 			</div>
 		</div>
 	);
