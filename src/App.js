@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 
 import ModeSelect from "./ModeSelect";
+import LineSelect from "./LineSelect";
 
 function App() {
 	const [mode, setMode] = useState(null);
+	const [line, setLine] = useState(null);
 
 	function handleSelectedMode(selectedMode) {
 		setMode(selectedMode);
+	}
+
+	function handleSelectedLine(selectedLine) {
+		setLine(selectedLine);
 	}
 
 	return (
@@ -14,9 +20,11 @@ function App() {
 			<header className="text-3xl mb-8">
 				<h1>Transport For London Line Information</h1>
 			</header>
+
 			<div className="w-full px-3 mb-4">
 				<ModeSelect handleSelectedMode={handleSelectedMode} />
-				You selected mode: {mode}
+				<LineSelect mode={mode} handleSelectedLine={handleSelectedLine} />
+				You selected line: {line}
 			</div>
 		</div>
 	);
